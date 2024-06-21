@@ -1,0 +1,45 @@
+name: Publish Library
+
+on:
+  push:
+    branches:
+      - main # Trigger the workflow when pushing to the main branch
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+        registry-url: 'https://registry.npmjs.org/'
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Bump version and publish
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: |
+        # Determine the type of version bump
+        bump_type="patch"
+        if [[ "${{ github.event.head_commit.message }}" == *"[minor]"* ]]; then
+          bump_type="minor"
+        elif [[ "${{ github.event.head_commit.message }}" == *"[major]"* ]]; then
+          bump_type="major"
+        fi
+
+        # Bump version and publish
+        npm version $bump_type
+        npm publish --access public
+
+    - name: Push changes back to GitHub
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git push origin HEAD --follow-tags
