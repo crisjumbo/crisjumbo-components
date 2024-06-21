@@ -1,12 +1,8 @@
 import { InputProps } from "./Input.types"
+import './Input.styles.css'
 
-export const Input = ({placeholder, type, value, onChange}: InputProps) => {
-    return (
-        <input
-            placeholder={placeholder}
-            type={type}
-            value={value}
-            onChange={onChange}
-        />
+export const Input = ({variant='default', placeholder, type, name, value, handleChange, handleFocus, handleBlur}: InputProps) => {
+    return ( 
+        <input className={`input input-${variant}`} placeholder={placeholder} type={type} name={name} value={value} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} />
     )
 }
