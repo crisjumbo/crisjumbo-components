@@ -31,8 +31,6 @@ jobs:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     - name: Bump version and publish
-      env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: |
         # Determine the type of version bump
         bump_type="patch"
@@ -45,7 +43,8 @@ jobs:
         # Bump version and publish
         npm version $bump_type
         npm publish --access public
-
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
