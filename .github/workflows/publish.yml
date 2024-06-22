@@ -40,8 +40,7 @@ jobs:
 
         # Bump version and publish
         npm version $bump_type
-        echo $bump_type
-        npm whoami
+        echo $bump_type && npm whoami
         npm publish --access public
 
     - name: Push changes back to GitHub
