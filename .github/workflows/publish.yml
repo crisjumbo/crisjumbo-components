@@ -46,7 +46,7 @@ jobs:
         npm version $bump_type
         npm publish --access public
 
-    - name: Push changes back to GitHub
+    - name: Push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
