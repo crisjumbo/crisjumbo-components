@@ -43,6 +43,8 @@ jobs:
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Push the changes
-      run: git push origin HEAD --follow-tags
+      run: |
+        git remote set-url origin https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/crisjumbo/crisjumbo-components.git
+        git push origin HEAD --follow-tags
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
