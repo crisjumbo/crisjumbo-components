@@ -42,7 +42,7 @@ jobs:
         npm publish --access public
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    - name: Push changes
+    - name: Push the changes
       run: git push origin HEAD --follow-tags
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
