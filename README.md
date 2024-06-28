@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Cris Jumbo components library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is dedicated to build all the components crisjumbo (author) will use in all projects.
 
 ## Available Scripts
 
