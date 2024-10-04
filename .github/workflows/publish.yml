@@ -49,7 +49,6 @@ jobs:
         npm publish --access public
     - name: Push the changes
       run: |
-        git remote set-url origin https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/crisjumbo/crisjumbo-components.git
-        git push origin HEAD --follow-tags
+        git push https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/crisjumbo/crisjumbo-components.git HEAD --follow-tags
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
