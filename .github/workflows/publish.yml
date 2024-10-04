@@ -3,7 +3,7 @@ name: Publish Library
 on:
   push:
     branches:
-      - main # Trigger the workflow when pushing to the main branch
+      - main
 
 jobs:
   publish:
