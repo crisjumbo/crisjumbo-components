@@ -2,7 +2,7 @@
   "name": "crisjumbo-component",
   "description": "Component library with React and TailwindCSS designed by Cris Jumbo",
   "author": "Cris Jumbo (https://crisjumbo.me/)",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "keywords": [
     "react",
     "tailwindcss",
