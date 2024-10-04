@@ -35,6 +35,10 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Ready to be deployed!
 
+## Warnings & Errors
+> publish.yml file, the usage in a step of "::set-output" it is going\
+ to be depracated. Use file enviroments instead.
+
 ## Authors & License
 
 [Cris Jumbo](https://github.com/crisjumbo)
