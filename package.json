@@ -36,8 +36,8 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "yarn clean && webpack --mode production",
-    "watch": "nodemon --watch src --exec 'yarn build'",
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -w -p tsconfig.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -73,12 +73,15 @@
     "@storybook/react": "8.1.10",
     "@storybook/react-webpack5": "8.1.10",
     "@storybook/test": "8.1.10",
+    "autoprefixer": "10.4.20",
     "css-loader": "^7.1.2",
     "eslint-plugin-storybook": "0.8.0",
     "mini-css-extract-plugin": "^2.9.0",
     "nodemon": "^3.1.4",
+    "postcss": "8.4.47",
     "storybook": "8.1.10",
     "style-loader": "^4.0.0",
+    "tailwindcss": "3.4.13",
     "ts-loader": "^9.5.1",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
