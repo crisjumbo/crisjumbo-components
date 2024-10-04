@@ -1,10 +1,11 @@
 import { ButtonProps } from "./Button.types"
-import './Button.styles.css'
+import { DefaultButton } from "./Button.styled"
 
+// TO-DO: Refactor to a better state managment
 export const Button = ({text, variant = 'default', handleClick}: ButtonProps) => {
     return (
-        <button className={`button button-${variant}`} onClick={handleClick}>
+        <DefaultButton onClick={handleClick}>
             {text}
-        </button>
+        </DefaultButton>
     )
 }
