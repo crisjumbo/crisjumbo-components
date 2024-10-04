@@ -27,7 +27,13 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "github-actions@github.com"
+    - name: Check for changes
+      id: git_status
+      run: |
+        git status --porcelain > git_status.txt
+        echo "::set-output name=changes::$(cat git_status.txt | wc -l)"
     - name: Commit changes
+      if: steps.git_status.outputs.changes != '0'
       run: |
         git add .
         git commit -m "Automated commit by GitHub Actions"
