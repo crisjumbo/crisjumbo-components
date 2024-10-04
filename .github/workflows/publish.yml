@@ -48,8 +48,8 @@ jobs:
         npm version ${{ steps.version_bump.outputs.bump_type }}
         npm publish --access public
     - name: Push the changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
       run: |
         git remote set-url origin https://x-access-token:${{ secrets.REPO_ACCESS_TOKEN }}@github.com/crisjumbo/crisjumbo-components.git
         git push origin HEAD --follow-tags
+      env:
+        GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
