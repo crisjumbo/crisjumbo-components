@@ -1,5 +1,8 @@
 export type ButtonProps = {
-    text: string;
-    variant?: string;
-    handleClick?: () => void;
-}
+  text: string;
+  testId?: string;
+  variant?: string;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  handleClick?: () => void;
+};

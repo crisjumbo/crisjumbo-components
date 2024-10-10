@@ -2,3 +2,6 @@
 node_modules
 .git
 .gitignore
+copy-dist.js
+.env.local
+public

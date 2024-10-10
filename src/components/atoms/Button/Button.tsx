@@ -1,11 +1,22 @@
-import { ButtonProps } from "./Button.types"
-import { DefaultButton } from "./Button.styled"
+import { ButtonProps } from './Button.types';
+import { CJPButton } from './Button.styled';
 
-// TO-DO: Refactor to a better state managment
-export const Button = ({text, variant = 'default', handleClick}: ButtonProps) => {
-    return (
-        <DefaultButton onClick={handleClick}>
-            {text}
-        </DefaultButton>
-    )
-}
+export const CJButton = ({
+  text,
+  testId = 'cj-button',
+  variant = 'default',
+  type = 'button',
+  disabled = false,
+  handleClick = () => {},
+}: ButtonProps) => {
+  return (
+    <CJPButton
+      data-testid={testId}
+      onClick={handleClick}
+      disabled={disabled}
+      type={type}
+    >
+      {text}
+    </CJPButton>
+  );
+};

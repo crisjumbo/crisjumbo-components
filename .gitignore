@@ -12,6 +12,7 @@
 /build
 /dist
 /lib
+/public
 
 # misc
 .DS_Store
@@ -21,6 +22,11 @@
 .env.production.local
 
 npm-debug.log*
+
+package-lock.json
+
+copy-dist.js
+
 yarn-debug.log*
 yarn-error.log*
 

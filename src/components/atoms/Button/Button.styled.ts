@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// TO-DO: Bring the themes from the ORIGIN project
 export const ButtonBase = styled.button`
   cursor: pointer;
   border: none;
@@ -16,4 +17,11 @@ export const DefaultButton = styled(ButtonBase)`
   width: 96px;
   background-color: white;
   color: black;
+`;
+
+export const CJPButton = styled.button`
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
 `;

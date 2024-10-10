@@ -1,5 +1,5 @@
 /** Components **/
-export {Button} from './Button/Button'
+export {CJButton} from './Button/Button'
 export {Input} from './Input/Input'
 /** Types **/
 export type {ButtonProps} from './Button/Button.types'
