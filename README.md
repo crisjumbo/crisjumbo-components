@@ -26,20 +26,30 @@ This project is dedicated to build all the components crisjumbo (author) will us
 | -------------- | -------------- | ---- | ------------------------------- | ----------- |
 | Button         | Button element | Atom | onHover, onClick, Disable       | In Progress |
 | Input          | Input element  | Atom | onFocus, onBlur, empty, disable | In Progress |
+| Link           | Link element   | Atom | onClick                         | In Progress |
 
 ## Available Scripts
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.
+Runs unitary tests for each piece in the library. For more complex tests like flow-tests
+create them in the origin repository.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the application into a /dist folder. This code will contain the core code
+minified to be used right away.
 
-The build is minified and the filenames include the hashes.\
-Ready to be deployed!
+Make 'yarn build' and ensure the minify code is the expected.
+
+### `yarn build:watch`
+
+Creates a server with Nodemon and watch for changes on the Application. When a change
+is made the server will clean the /dist folder, create a new one and publish it to yalc with:
+'yalc publish --push'.
+
+Ensure your other repository is link to the yalc store with 'yalc link crisjumbo-component' and
+listening to changes on the ~/.yalc/dist updates. (more details on the origin repository).
 
 ## Warnings & Errors
 
