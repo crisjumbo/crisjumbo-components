@@ -1,14 +1,14 @@
-import { ButtonProps } from './Button.types';
-import { StyledButton } from './Button.styled';
+import { LinkProps } from './Link.types';
+import { StyledLink } from './Link.styled';
 
-export const Button = ({
+export const Link = ({
   text,
   testId = 'cj-button',
   type = 'button',
   state = 'active',
   variant = 'default',
   handleClick = () => {},
-}: ButtonProps) => {
+}: LinkProps) => {
   if (state === 'disabled') {
     return <button>disabled</button>;
   }
@@ -17,7 +17,7 @@ export const Button = ({
   }
 
   return (
-    <StyledButton
+    <StyledLink
       data-testid={testId}
       onClick={handleClick}
       state={state}
@@ -25,6 +25,6 @@ export const Button = ({
       type={type}
     >
       {text}
-    </StyledButton>
+    </StyledLink>
   );
 };

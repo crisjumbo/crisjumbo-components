@@ -1,12 +1,12 @@
 import React from 'react';
-import { CJButton } from '../components';
+import { Button } from '../components';
 
 function Home() {
   return (
     <>
-    <div>
-      <CJButton text='components'/>
-    </div>
+      <div>
+        <Button text="components" />
+      </div>
     </>
   );
 }

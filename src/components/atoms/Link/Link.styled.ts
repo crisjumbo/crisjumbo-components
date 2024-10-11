@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { StyledButtonProps } from './Button.types';
+import { StyledLinkProps } from './Link.types';
 
 // TO-DO: Bring the themes from the ORIGIN project
 const variantStyles = {
@@ -8,9 +8,9 @@ const variantStyles = {
     font-weight: 400;
   `,
   primary: css`
-    color: ${({ theme }) => theme.colors.white};
-    font-weight: 700;
-    text-decoration-line: ${({ theme }) => theme.button.underline};
+    color: ${({ theme }) => theme.colors.brand};
+    font-weight: ${({ theme }) => theme.link.weight};
+    text-decoration-line: ${({ theme }) => theme.link.underline};
   `,
   secondary: css`
     color: ${({ theme }) => theme.colors.secondary};
@@ -18,9 +18,8 @@ const variantStyles = {
   `,
 };
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledLink = styled.a<StyledLinkProps>`
   font-size: 18px;
-  border-radius: 6px;
   cursor: pointer;
   ${({ variant }) => variant && variantStyles[variant]}
 `;
