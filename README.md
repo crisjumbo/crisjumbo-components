@@ -1,61 +1,154 @@
-# Cris Jumbo components library
+# 🎨 CrisJumbo Component Library
 
-This project is dedicated to build all the components crisjumbo (author) will use in all projects.
+A modern React component library built with TypeScript and styled-components, designed for consistent UI development across all CrisJumbo projects.
 
-## Onboarding
+[![npm version](https://badge.fury.io/js/crisjumbo-component.svg)](https://badge.fury.io/js/crisjumbo-component)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-1. This repository has a publish.yml file
-2. The publish.yml file will be in charge of updating the NPM version
-3. Pull after the ACTION is completed (NPM version updated in origin)
+## 📦 Installation
 
-## Usage
+```bash
+# Using npm
+npm install crisjumbo-component
 
-- Development:
+# Using yarn
+yarn add crisjumbo-component
+```
 
-1. Update branch with 'yarn pull'
-2. Update dependencies with 'yarn install'
-3. Link to Yalc 'yalc publish'
-4. Development linked to the origin project 'yarn build:watch'
+### Peer Dependencies
 
-- Testing:
-- Usage:
+This library requires the following peer dependencies:
 
-## Available Components
+```bash
+npm install react react-dom styled-components
+```
 
-| Component name | Description    | Type | States                          | Status      |
-| -------------- | -------------- | ---- | ------------------------------- | ----------- |
-| Button         | Button element | Atom | onHover, onClick, Disable       | In Progress |
-| Input          | Input element  | Atom | onFocus, onBlur, empty, disable | In Progress |
-| Link           | Link element   | Atom | onClick                         | In Progress |
+## 🚀 Quick Start
 
-## Available Scripts
+```jsx
+import React from 'react';
+import { Button, Input } from 'crisjumbo-component';
 
-### `yarn test`
+function App() {
+  return (
+    <div>
+      <Button onClick={() => console.log('Clicked!')}>Click me</Button>
+      <Input placeholder="Enter your name" />
+    </div>
+  );
+}
 
-Runs unitary tests for each piece in the library. For more complex tests like flow-tests
-create them in the origin repository.
+export default App;
+```
 
-### `yarn build`
+## 📚 Available Components
 
-Builds the application into a /dist folder. This code will contain the core code
-minified to be used right away.
+| Component    | Description                | Type     | States                               | Status         |
+| ------------ | -------------------------- | -------- | ------------------------------------ | -------------- |
+| **Button**   | Interactive button element | Atom     | `hover`, `click`, `disabled`         | ✅ Ready       |
+| **Input**    | Text input element         | Atom     | `focus`, `blur`, `empty`, `disabled` | ✅ Ready       |
+| **Link**     | Navigation link element    | Atom     | `click`, `hover`                     | ✅ Ready       |
+| **Searcher** | Search input component     | Molecule | `search`, `clear`                    | 🚧 In Progress |
 
-Make 'yarn build' and ensure the minify code is the expected.
+## 🛠️ Development
 
-### `yarn build:watch`
+### Prerequisites
 
-Creates a server with Nodemon and watch for changes on the Application. When a change
-is made the server will clean the /dist folder, create a new one and publish it to yalc with:
-'yalc publish --push'.
+- Node.js >= 16
+- Yarn >= 1.22
 
-Ensure your other repository is link to the yalc store with 'yalc link crisjumbo-component' and
-listening to changes on the ~/.yalc/dist updates. (more details on the origin repository).
+### Getting Started
 
-## Warnings & Errors
+1. **Clone and install dependencies:**
 
-> publish.yml file, the usage in a step of "::set-output" it is going\
->  to be depracated. Use file enviroments instead.
+   ```bash
+   git clone <repository-url>
+   cd crisjumbo-component
+   yarn install
+   ```
 
-## Authors & License
+2. **Start development:**
 
-[Cris Jumbo](https://github.com/crisjumbo)
+   ```bash
+   # Build and watch for changes
+   yarn build:watch
+
+   # View components in Storybook
+   yarn storybook
+   ```
+
+3. **Link for local development:**
+
+   ```bash
+   # Publish to yalc for local development
+   yalc publish
+
+   # In your consuming project
+   yalc add crisjumbo-component
+   ```
+
+### Available Scripts
+
+| Script                 | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `yarn build`           | Build the library for production                  |
+| `yarn build:watch`     | Build and watch for changes, auto-publish to yalc |
+| `yarn clean`           | Remove the dist folder                            |
+| `yarn clean:build`     | Clean and build                                   |
+| `yarn storybook`       | Start Storybook development server                |
+| `yarn build:storybook` | Build Storybook for production                    |
+| `yarn format`          | Format code with Prettier                         |
+
+## 📖 Documentation
+
+- **Storybook**: Run `yarn storybook` to view component documentation and examples
+- **TypeScript**: Full TypeScript support with type definitions included
+
+## 🔄 CI/CD
+
+This project uses GitHub Actions for automated publishing:
+
+- **Automatic versioning**: On merge to main, the library version is automatically bumped
+- **NPM publishing**: New versions are automatically published to NPM
+- **Pull after deployment**: Always pull latest changes after CI/CD completes
+
+### Important Notes
+
+> ⚠️ **Deprecated Warning**: The `::set-output` command in GitHub Actions is deprecated. Consider updating to environment files.
+
+## 🧪 Testing
+
+```bash
+# Run unit tests
+yarn test
+
+# Run tests in watch mode
+yarn test --watch
+```
+
+**Note**: Complex integration tests should be implemented in the consuming applications.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/new-component`
+3. Make your changes and add tests
+4. Format your code: `yarn format`
+5. Commit your changes: `git commit -m 'Add new component'`
+6. Push to the branch: `git push origin feature/new-component`
+7. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Cris Jumbo**
+
+- GitHub: [@crisjumbo](https://github.com/crisjumbo)
+- Website: [crisjumbo.me](https://crisjumbo.me/)
+
+---
+
+Made with ❤️ by [Cris Jumbo](https://github.com/crisjumbo)
